@@ -25,11 +25,12 @@
 // 	console.log("Process terminated..."); 
 // });
 
-var spawn = require("child_process").spawn;
-var workers = [];
+import childProcess = require("child_process");
+var spawn       = childProcess.spawn;
+var workers:any = [];
 
-var killWorkers = function() {
-  workers.forEach(function(worker) {
+var killWorkers = () => {
+  workers.forEach((worker) => {
     process.kill(worker);
   });
 };
